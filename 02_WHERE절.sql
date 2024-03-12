@@ -52,7 +52,7 @@ WHERE hire_date LIKE '%05%';
 
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE hire_date LIKE '___05%';
+WHERE hire_date LIKE '___05%'; -- ___ -> _(언더바는 자리수를 표현한다.)
 
 -- IS NULL (null값을 찾음)
 SELECT * FROM employees

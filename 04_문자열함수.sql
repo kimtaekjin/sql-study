@@ -70,7 +70,7 @@ SELECT
     RTRIM('javascript_java', 'java')
 FROM dual;
 
-SELECT TRIM('       java       ') FROM dual;
+SELECT TRIM('           java        ') FROM dual;
 
 -- REPLACE(str, old, new)
 SELECT
@@ -78,7 +78,7 @@ SELECT
 FROM dual;
 
 SELECT
-    REPLACE(REPLACE('My dream is a president', 'president', 'programmer'), ' ', '')
+    REPLACE(REPLACE('My dream is a president', 'president', 'programmer'), '', '')
 FROM dual;
 
 SELECT

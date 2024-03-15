@@ -24,14 +24,44 @@ SELECT * FROM dept2;
 INSERT INTO dept2
 VALUES(30,'경영지원','경기도',SYSDATE,200000000);
 
+--컬럼 추가
+
+ALTER TABLE dept2
+ADD dept_count NUMBER(3);
+
+--컬럼명 변경
+ALTER TABLE dept2
+RENAME COLUMN dept_count TO emp_count;
 
 
+DESC dept3;
+
+--컬럼 속성 수정
+--만약 변경하고자 하는 컬럼에 데이터가 이미 존재한다면, 그에 맞는 타입으로
+--변경해야 한다. 맞지 않는 타입으로는 변경이 불가능
+
+ALTER TABLE dept2
+MODIFY emp_count VARCHAR2(10);
 
 
+--DDL(CREATE,ALTER,TRUNCATE,DROP)은 트랜잭션의 대상이 아닙니다.
+--복구기능이 없습니다,
+--ROLLBACK을 사용하더라도 위의 ALTER로 수정한 내용이 롤백되지 않습니다.
 
+--컬럼 삭제
+ALTER TABLE dept2
+DROP COLUMN DEPT_BONUS; --컬럼에 데이터가 있어도 지워집니다.
 
+--테이블 이름 변경
+ALTER TABLE dept2
+RENAME to dept3;
 
+--테이블 삭제(구조는 남겨두고 내부 데이터만 모두 삭제)
+TRUNCATE TABLE dept3;
 
+--테이블 삭제(테이블 구조 자체를 삭제)
+DROP TABLE dept3;
 
-
+--테이블 삭제 시 롤백으로도 복구가 불가능하다.
+ROLLBACK;
 

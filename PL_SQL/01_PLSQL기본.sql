@@ -7,7 +7,9 @@
 - 쿼리문의 집합으로 어떠한 동작을 일괄 처리하기 위한 용도로 사용합니다.
 */
 
-SET SERVEROUTPUT ON; -- 출력문 활성화
+
+-- 출력문 활성화
+SET SERVEROUTPUT ON; 
 
 -- 익명 블록 설정
 DECLARE -- 변수를 선언하는 구간(선언부)
